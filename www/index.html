@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#071018"
+    >
+
+    <title>Trilha Selvagem</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+
+<body>
+
+    <!-- ==================================================
+         JOGO
+         ================================================== -->
+
+    <main id="game-container">
+
+        <canvas id="game"></canvas>
+
+
+        <!-- ==================================================
+             HUD
+             ================================================== -->
+
+        <div id="hud" class="hidden">
+
+            <div class="hud-box">
+
+                <span class="hud-title">
+                    ANIMAL
+                </span>
+
+                <strong id="animal-label">
+                    LOBO
+                </strong>
+
+            </div>
+
+
+            <div class="hud-box">
+
+                <span class="hud-title">
+                    FASE
+                </span>
+
+                <strong id="phase-label">
+                    1
+                </strong>
+
+            </div>
+
+
+            <div class="hud-box">
+
+                <span class="hud-title">
+                    DISTÂNCIA
+                </span>
+
+                <strong id="score">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             NOME DA PAISAGEM
+             ================================================== -->
+
+        <div id="biome-label">
+            TRILHA SELVAGEM
+        </div>
+
+
+        <!-- ==================================================
+             TELA INICIAL
+             ================================================== -->
+
+        <section id="start-screen" class="screen">
+
+            <div class="menu-card">
+
+                <div class="animal-icon">
+                    🐺
+                </div>
+
+                <h1>
+                    TRILHA
+                    <span>SELVAGEM</span>
+                </h1>
+
+                <p class="subtitle">
+                    Uma aventura por três mundos.
+                </p>
+
+
+                <div class="phase-preview">
+
+                    <div>
+                        🐺
+                        <small>LOBO</small>
+                    </div>
+
+                    <div>
+                        🦆
+                        <small>ORNITORRINCO</small>
+                    </div>
+
+                    <div>
+                        🦨
+                        <small>SARUÊ</small>
+                    </div>
+
+                </div>
+
+
+                <button id="play-btn">
+                    COMEÇAR A AVENTURA
+                </button>
+
+
+                <p class="controls-info">
+                    ↑ ↓ ← → ou WASD<br>
+                    No celular, deslize a tela
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             TELA DE FASE
+             ================================================== -->
+
+        <section
+            id="phase-screen"
+            class="screen hidden"
+        >
+
+            <div class="phase-card">
+
+                <div
+                    id="phase-animal-icon"
+                    class="big-animal"
+                >
+                    🐺
+                </div>
+
+                <h2 id="phase-title">
+                    FASE 1
+                </h2>
+
+                <h3 id="phase-animal-name">
+                    O LOBO
+                </h3>
+
+                <p id="phase-description">
+                    Atravesse a cidade e alcance a floresta.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             TELA DE DERROTA
+             ================================================== -->
+
+        <section
+            id="lose-screen"
+            class="screen hidden"
+        >
+
+            <div class="menu-card">
+
+                <div class="result-icon">
+                    💥
+                </div>
+
+                <h2>
+                    FIM DA TRILHA
+                </h2>
+
+                <p id="cause-text">
+                    Você encontrou um obstáculo.
+                </p>
+
+                <p id="final-score-lose">
+                    Distância: 0
+                </p>
+
+                <button id="retry-btn-lose">
+                    TENTAR NOVAMENTE
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             TELA DE VITÓRIA
+             ================================================== -->
+
+        <section
+            id="win-screen"
+            class="screen hidden"
+        >
+
+            <div class="menu-card">
+
+                <div class="result-icon">
+                    🏆
+                </div>
+
+                <h2>
+                    TRILHA CONCLUÍDA!
+                </h2>
+
+                <p id="final-score-win">
+                    Fase concluída.
+                </p>
+
+                <button id="retry-btn-win">
+                    JOGAR NOVAMENTE
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CONTROLES MOBILE
+             ================================================== -->
+
+        <div
+            id="dpad"
+            class="hidden"
+        >
+
+            <button
+                class="dbtn up"
+                data-dir="up"
+            >
+                ▲
+            </button>
+
+            <button
+                class="dbtn left"
+                data-dir="left"
+            >
+                ◀
+            </button>
+
+            <button
+                class="dbtn down"
+                data-dir="down"
+            >
+                ▼
+            </button>
+
+            <button
+                class="dbtn right"
+                data-dir="right"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- ==================================================
+             AVISO DE CONTROLE
+             ================================================== -->
+
+        <div
+            id="joystick-hint"
+            class="hidden"
+        >
+            DESLIZE PARA SE MOVER
+        </div>
+
+    </main>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
